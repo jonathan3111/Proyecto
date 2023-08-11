@@ -3,6 +3,9 @@
 # SendActivity_DgqAJW()
 [Activity
     Text = ${greeting()}
-    SuggestedActions = Dame precios de libros | Cual es el libro mas vendido | libros de la semana | wenas
+
+    SuggestedActions = Dame precios de libros | Cual es el libro mas vendido | ¿Saca fotocopias?
+
 ]
+
 
