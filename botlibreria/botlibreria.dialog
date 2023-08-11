@@ -1,0 +1,56 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "name": "botlibreria",
+    "description": "",
+    "id": "A79tBe"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnConversationUpdateActivity",
+      "$designer": {
+        "id": "l9FsWj",
+        "name": "Greeting (ConversationUpdate activity)"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.Foreach",
+          "$designer": {
+            "name": "Loop: For each item",
+            "description": "",
+            "id": "qm5KGL"
+          },
+          "itemsProperty": "turn.Activity.membersAdded",
+          "actions": [
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "name": "Branch: If/else",
+                "description": "",
+                "id": "wSKXYI"
+              },
+              "condition": "string(dialog.foreach.value.id) != string(turn.Activity.Recipient.id)",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "name": "Send a response",
+                    "description": "",
+                    "id": "DgqAJW"
+                  },
+                  "activity": "${SendActivity_DgqAJW()}"
+                }
+              ]
+            }
+          ],
+          "value": "dialog.foreach.value"
+        }
+      ]
+    }
+  ],
+  "generator": "botlibreria.lg",
+  "id": "botlibreria",
+  "recognizer": "botlibreria.lu.qna"
+}

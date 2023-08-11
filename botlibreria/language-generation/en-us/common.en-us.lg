@@ -1,0 +1,7 @@
+# greeting()
+- IF: ${getTimeOfDay(utcNow()) == 'dias'}
+   - Buenos Dias!
+- ELSEIF: ${getTimeOfDay(utcNow()) == 'tarde'}
+   - Buenas Tardes!
+- ELSE:
+   - Buenas Noches!

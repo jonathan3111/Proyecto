@@ -1,0 +1,8 @@
+[import](common.lg)
+
+# SendActivity_DgqAJW()
+[Activity
+    Text = ${greeting()}
+    SuggestedActions = Dame precios de libros | Cual es el libro mas vendido 
+]
+
